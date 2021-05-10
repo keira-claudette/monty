@@ -1,4 +1,4 @@
-## A Monty Interpreter in written in C
+## A Monty Interpreter written in C
 
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes.
 It relies on a unique stack, with specific instructions to manipulate it.
