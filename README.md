@@ -10,7 +10,8 @@ It relies on a unique stack, with specific instructions to manipulate it.
 
 ## Compilation & Output
 Git clone this repository and compile the code this way:
-   > gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+
+   `gcc -Wall -Werror -Wextra -pedantic *.c -o monty`
 
 ## Usage
 `monty file`
