@@ -9,8 +9,8 @@ It relies on a unique stack, with specific instructions to manipulate it.
         specification of the language.
 
 ## Compilation & Output
-Git clone this repository and compile the code this way
- `gcc -Wall -Werror -Wextra -pedantic *.c -o monty`
+Git clone this repository and compile the code this way:
+   > gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 ## Usage
 `monty file`
