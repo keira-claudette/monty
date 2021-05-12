@@ -30,10 +30,3 @@ int main(unsigned int argc, char **argv)
                 perror("Error: Can\'t open file <>\n");
                 exit(EXIT_FAILURE);
         }
-	lines = malloc (SIZE);
-	if (!lines)
-	{
-		perror("Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-}

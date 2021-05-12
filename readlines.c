@@ -7,9 +7,8 @@
 
 char **readlines(FILE *filepointer)
 {
-	char *line;
+	char *file_line;
 	size_t bufsize = 0;
-	char **lines = NULL;
 	int i = 0;
 
 	if (!filepointer)
@@ -18,11 +17,11 @@ char **readlines(FILE *filepointer)
 		exit(EXIT_FAILURE);
 	}
 /* read the lines from opcode file into an array of lines */
-	while (getline(&line, bufsize, filepointer) != -1)
+	while (getline(&file_line, bufsize, filepointer) != -1)
 	{
-		lines[i] = line;
+		all_lines[i] = file_line;
 		i++;
 	}
 
-	return (lines);
+	return (all_lines);
 }

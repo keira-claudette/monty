@@ -6,7 +6,7 @@
  * Return: pointer to an array of tokens
  */
 
-char **tokenizer(char *lines)
+char **tokenizer(char *line)
 {
 	int j = 0;
 	char *token;
@@ -18,7 +18,7 @@ char **tokenizer(char *lines)
 		exit(EXIT_FAILURE);
 	}
 /* get first token*/
-	token = strtok(lines, " ");
+	token = strtok(line, " ");
 	while(!token)
 	{
 		tokens[j] = token;
@@ -29,7 +29,11 @@ char **tokenizer(char *lines)
 	tokens[j] = NULL;
 	return (tokens);
 }
-
+/**
+ * get_op - gets from line what opcode is given
+ * @tokens - pointer to an array or line chunks
+ * Return: pointer to the opcode
+ */
 char *get_op(char **tokens)
 {
 	opcode *char;
@@ -45,6 +49,11 @@ char *get_op(char **tokens)
 	return (opcode);
 }
 
+/**
+ * op_arg - gets the argument passed to the opcode
+ * @tokens: chunks of the line after tokenizing
+ * Return: integer to be oprated on
+ */
 int *op_arg(char **tokens)
 {
 	char *opcode = get_op(char **tokens);
