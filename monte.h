@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+/* all_lines is an array of all lines read from a byte code file*/
+extern char **all_lines;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,7 +41,11 @@ char **readlines(FILE *filepointer);
 char **tokenizer(char *lines);
 char *get_op(char **tokens);
 int *op_arg(char **tokens);
-
-
-
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop_int(stack_t **stack, unsigned int line_number);
+void swap_int(stack_t **stack, unsigned int line_number);
+void add_ints(stack_t **stack, unsigned int line_number);
+void nop_nop(stack_t **stack, unsigned int line_number);
 #endif
