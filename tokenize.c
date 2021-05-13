@@ -56,7 +56,7 @@ char *get_op(char **tokens)
  */
 int *op_arg(char **tokens)
 {
-	char *opcode = get_op(char **tokens);
+	char *opcode = get_op(tokens);
 	int i = 0;
 
 	while (tokens[i] != opcode)
