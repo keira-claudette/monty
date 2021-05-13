@@ -48,4 +48,5 @@ void pop_int(stack_t **stack, unsigned int line_number);
 void swap_int(stack_t **stack, unsigned int line_number);
 void add_ints(stack_t **stack, unsigned int line_number);
 void nop_nop(stack_t **stack, unsigned int line_number);
+void (get_op_func(char *line_opcode))(stack_t **, unisigned int);
 #endif
