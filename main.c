@@ -7,7 +7,8 @@
  */
 int main(int argc, char **argv)
 {
-	char *line_opcode, *filename = argv[1];
+	FILE *fileptr = fopen(argv[1], "r");
+	char *line_opcode;
 	stack_t *stacknode = malloc(sizeof(stack_t));
 	stack_t **head = &stacknode;
 	char **all_lines;
@@ -23,7 +24,6 @@ int main(int argc, char **argv)
 			exit(EXIT_FAILURE);
 		}
 	}
-	fileptr = fopen(filename, "r");
 	if (!fileptr)
 	{
 		perror("Error: Can\'t open file <>\n");
