@@ -11,11 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 	int i = 0, j, n;
 	stack_t *new_node = malloc(sizeof(stack_t));
 	stack_t *temp = *stack;
-/*
- * parse the line to get int argument by finding first instance of
- * a non null-byte which would be the opcode
- * second instance of non null-byte char will be the int argument
- */
+
 	all_lines = readlines(fileptr);
 	line = all_lines[line_number - 1];
 	linechunks = tokenizer(line);
@@ -25,7 +21,6 @@ void push(stack_t **stack, unsigned int line_number)
 	for (; linechunks[j] == '\0'; j++)
 		;
 	n = atoi(linechunks[j]);
-/*Check for int,atoi returns 0 on failure to convert*/
 	if (n == 0)
 	{
 		perror("L<line_number>: usage: push integer \n");

@@ -18,11 +18,8 @@ int main(int argc, char **argv)
 
 	if (argc <= 1)
 	{
-		if (isatty(STDERR_FILENO) == 1)
-		{
-			perror("USAGE: monty file \n");
-			exit(EXIT_FAILURE);
-		}
+		perror("USAGE: monty file \n");
+		exit(EXIT_FAILURE);
 	}
 	if (!fileptr)
 	{

@@ -24,6 +24,6 @@ char **readlines(FILE *filepointer)
 		i++;
 	}
 
-	all_lines[i+1] = '\0';
+	all_lines[i + 1] = '\0';
 	return (all_lines);
 }
