@@ -5,7 +5,7 @@
  * @line_number: unused varaible
  * @stack: pointer to a doubly linked list
  */
-void swap_int(stack_t **stack, unsigned int line_number)
+void swap_int(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int tmp, len = 0;

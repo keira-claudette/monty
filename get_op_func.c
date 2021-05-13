@@ -5,16 +5,16 @@
  * @line_opcode: opcode read from line
  * Return: pointer to the function that corresponds to the opcode
  */
-void (get_op_func(char *line_opcode))(stack_t **, unisigned int)
+void (*get_op_func(char *line_opcode))(stack_t **, unsigned int)
 {
-	instruction_t instruct [] = {
-		{"push", push}
-		{"pall", pall}
-		{"pint", pint}
-		{"pop", pop_int}
-		{"swap", swap_int}
-		{"add", add_ints}
-		{"nop", nop_nop}
+	instruction_t instruct[] = {
+		{"push", push},
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop_int},
+		{"swap", swap_int},
+		{"add", add_ints},
+		{"nop", nop_nop},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -26,4 +26,5 @@ void (get_op_func(char *line_opcode))(stack_t **, unisigned int)
 
 		i++;
 	}
+	return (NULL);
 }

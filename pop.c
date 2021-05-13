@@ -1,6 +1,6 @@
 #include "monte.h"
 /**
- * pop - removes the top element of the stack
+ * pop_int - removes the top element of the stack
  * @line_number: unused variable
  * @stack: pointer to a doubly linked list
  */

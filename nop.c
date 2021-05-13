@@ -5,7 +5,7 @@
  * @stack: unused variable
  */
 void nop_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused))
- unsigned int line_number)
+unsigned int line_number)
 {
 	exit(EXIT_SUCCESS);
 }

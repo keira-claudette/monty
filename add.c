@@ -1,12 +1,12 @@
-#inlcude "monte.h"
+#include "monte.h"
 /**
  * add_ints - adds the top two elements
  * @line_number: unused variable
  * @stack: pointer to a linked list representation of a stack or queue
  */
-void add_ints(stack_t **stack, unsigned int line_number)
+void add_ints(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-	stack_t *temp = stack;
+	stack_t *temp = *stack;
 	int len = 0;
 
 	while (temp)

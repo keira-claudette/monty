@@ -1,4 +1,4 @@
-#include "monteh"
+#include "monte.h"
 /**
  * push - adds an elements to the stack(or queue)
  * @line_number: line to interpret
@@ -6,8 +6,8 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *line = all_lines[line_number - 1];
-	char **linechunks = tokenizer(line);
+	char *line;
+	char **linechunks, **all_lines;
 	int i = 0, j, n;
 	stack_t *new_node = malloc(sizeof(stack_t));
 	stack_t *temp = *stack;
@@ -16,7 +16,10 @@ void push(stack_t **stack, unsigned int line_number)
  * a non null-byte which would be the opcode
  * second instance of non null-byte char will be the int argument
  */
-	for (; linechunks[i] != push; i++)
+	all_lines = readlines(fileptr);
+	line = all_lines[line_number - 1];
+	linechunks = tokenizer(line);
+	for (; strcmp(linechunks[i], "push") != 0; i++)
 		;
 	j = i + 1;
 	for (; linechunks[j] == '\0'; j++)

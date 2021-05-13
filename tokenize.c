@@ -2,7 +2,7 @@
 
 /**
  * tokenizer - splits line to strings
- * @lines: pointer to sentence
+ * @line: pointer to sentence
  * Return: pointer to an array of tokens
  */
 
@@ -19,7 +19,7 @@ char **tokenizer(char *line)
 	}
 /* get first token*/
 	token = strtok(line, " ");
-	while(!token)
+	while (!token)
 	{
 		tokens[j] = token;
 		j++;
@@ -31,14 +31,16 @@ char **tokenizer(char *line)
 }
 /**
  * get_op - gets from line what opcode is given
- * @tokens - pointer to an array or line chunks
+ * @tokens: pointer to an array or line chunks
  * Return: pointer to the opcode
  */
 char *get_op(char **tokens)
 {
-	opcode *char;
+	char *opcode;
 	int op_index = 0;
-/* since strtok converts delimeter to a null byte, traverses the tokens and stop
+/*
+ * since strtok converts delimeter to a null byte,
+ * traverses the tokens and stop
  * when an char that's not a null byte of encountered
  */
 	while (tokens[op_index] == '\0')
@@ -54,10 +56,11 @@ char *get_op(char **tokens)
  * @tokens: chunks of the line after tokenizing
  * Return: integer to be oprated on
  */
-int *op_arg(char **tokens)
+int op_arg(char **tokens)
 {
-	char *opcode = get_op(char **tokens);
-	int i = 0;
+	char *opcode = get_op(tokens);
+	int j, i = 0;
+	int op_argument;
 
 	while (tokens[i] != opcode)
 		i++;

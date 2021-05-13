@@ -8,7 +8,8 @@
 char **readlines(FILE *filepointer)
 {
 	char *file_line;
-	size_t bufsize = 0;
+	char **all_lines = NULL;
+	size_t *bufsize = NULL;
 	int i = 0;
 
 	if (!filepointer)
@@ -23,5 +24,6 @@ char **readlines(FILE *filepointer)
 		i++;
 	}
 
+	all_lines[i+1] = '\0';
 	return (all_lines);
 }
